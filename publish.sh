@@ -22,7 +22,7 @@ echo "Generating site"
 hugo -t hugo-theme-codex
 
 echo "Updating gh-pages branch"
-cd public && git add --all && git commit -m "Publishing to gh-pages (publish.sh)"
+cd public && echo "blog.jw910731.wtf" > CNAME && git add --all && git commit -m "Publishing to gh-pages (publish.sh)"
 
 echo "Pushing to github"
 git push --all
