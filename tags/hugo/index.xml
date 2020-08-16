@@ -5,4 +5,6 @@
 唯一想要許的願望大概就是希望可以串插件讓我中文字與英文字的交接處可以自動加入空格了。這等著以後研究吧，先睡。
 驚魂 然後正當我想安詳的睡去時，才發現我只有輸出XML檔。後來爬了好久才發現我剛才創建gh-pages這個production分支的時候，誤刪了作為theme本體的submodule的內容了，所以沒辦法找到theme的相關設定，只好輸出xml檔案。
 重新部屬submodule後事情就安心結束了
-Github Action自動部屬 &amp;lt;待續&amp;gt;</description></item></channel></rss>
+Github Action自動部屬 然後就迎來了精彩的Github Action自動部屬了，早上我簡單的喇了一下文件跟組成Github Action的部件後，發現其實各個元件都包的很好了。
+我便從GH Action Hugo的網頁裡面喇了範例出來用，結果居然爛掉！
+後來才發現因為gh-pages這個branch已經存在，我把它刪掉讓GH Action重建這個branch就好了</description></item></channel></rss>
