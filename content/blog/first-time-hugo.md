@@ -22,4 +22,8 @@ toc: false
 重新部屬submodule後事情就安心結束了
 
 # Github Action自動部屬
-\<待續\>
+然後就迎來了精彩的Github Action自動部屬了，早上我簡單的喇了一下文件跟組成Github Action的部件後，發現其實各個元件都包的很好了。
+
+我便從[GH Action Hugo](https://github.com/peaceiris/actions-hugo)的網頁裡面喇了範例出來用，結果居然爛掉！
+
+後來才發現因為`gh-pages`這個branch已經存在，我把它刪掉讓GH Action重建這個branch就好了
