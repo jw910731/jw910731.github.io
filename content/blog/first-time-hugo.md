@@ -2,7 +2,7 @@
 title: "第一次Hugo!"
 date: 2020-08-16T01:07:37+08:00
 description: "第一次使用Hugo採雷心得文"
-tags: ["Hugo", "BlogHosting", "Web"]
+tags: ["Hugo", "BlogHosting", "Web", "心得"]
 math: false
 toc: false
 ---
