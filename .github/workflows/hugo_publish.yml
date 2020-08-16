@@ -2,7 +2,7 @@ name: github pages
 
 on:
   push:
-    paths: ["content/**", ".github/workflows/main.yml", "config.toml"]
+    paths: ["content/**", ".github/workflows/hugo_publish.yml", "config.toml"]
 
 jobs:
   deploy:
