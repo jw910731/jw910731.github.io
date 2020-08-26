@@ -75,4 +75,5 @@ Load /dev/sda ->
 PV Discovered (Event driven) ->
 **VG & LV Discovery skipped**
 等 最後那個是什麼，難怪sys/home會被inactive，因為他在LV discovery的階段被跳過而導致損毀的啊
-之後發現`/etc/lvm/lvm.conf`中有個`event_driven`的選項，調成0(也就是關閉)，就可以正常開機了
+之後發現`/etc/lvm/lvm.conf`中有個`event_activation`的選項，調成0(也就是關閉)，就可以正常開機了
+
