@@ -11,7 +11,7 @@ Toc: true
 
 ## 硬體
 
-**CPU:** AMD Ryzen 5800X
+**CPU:** AMD Ryzen 3800X
 
 **GPU:** AMD RX570
 
