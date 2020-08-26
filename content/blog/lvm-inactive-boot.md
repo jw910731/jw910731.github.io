@@ -1,7 +1,7 @@
 ---
 title: "Linux 邏輯磁區在重開後變為 inactivate"
 date: 2020-08-26T15:38:57+08:00
-description:"處理跨PV的lvm LV在重開後變為inactive"
+description: "處理跨PV的lvm LV在重開後變為inactive"
 tags: ["心得", "事件", "linux", "lvm"]
 draft: true
 ---
