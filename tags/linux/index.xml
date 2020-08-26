@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>linux on codex</title><link>/tags/linux/</link><description>Recent content in linux on codex</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Wed, 26 Aug 2020 15:38:57 +0800</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 邏輯磁區在重開後變為 inactivate</title><link>/blog/lvm-inactive-boot/</link><pubDate>Wed, 26 Aug 2020 15:38:57 +0800</pubDate><guid>/blog/lvm-inactive-boot/</guid><description>Info 硬體 CPU: AMD Ryzen 5800X
+GPU: AMD RX570
+RAM: 16GB
+磁區分配 PV 硬碟 SSD(nvme0n1p5) HHD(sda2) PV size 250GB 250GB VG SSD+HHD: sys
+LV sys/root(根目錄) : SSD 186GB
+sys/home(家目錄) : SSD 64GB(Lvm Cache) + HHD 250GB
+非LVM nvme0n1p1 ( 500MB ): EFI nvme0n1p4 ( 1GB ): /boot 軟體 OS: Linux Mint 20
+其餘軟體預載
+事件 系統正確設置安裝後，開機時會卡在mounting /dev/sys/home，timeout後無法正確啟動
+研究 插入開機碟後發現sys/home不可見，隨後經過googling與探索後發現是不知為何LV inactivated了</description></item></channel></rss>

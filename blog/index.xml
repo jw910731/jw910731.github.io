@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on codex</title><link>/blog/</link><description>Recent content in Blogs on codex</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Mon, 17 Aug 2020 00:06:09 +0800</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS帳號啟用心得文</title><link>/blog/aws-fail-verify/</link><pubDate>Mon, 17 Aug 2020 00:06:09 +0800</pubDate><guid>/blog/aws-fail-verify/</guid><description>緣由 之前雖然有一個AWS帳號，但因為不知道要拿來玩什麼就沒有動他了。直到最近有幸搶到shrt.tw網域，我想來搞個serverless url shortener，就把AWS帳號翻出來用了。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on codex</title><link>/blog/</link><description>Recent content in Blogs on codex</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Wed, 26 Aug 2020 15:38:57 +0800</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux 邏輯磁區在重開後變為 inactivate</title><link>/blog/lvm-inactive-boot/</link><pubDate>Wed, 26 Aug 2020 15:38:57 +0800</pubDate><guid>/blog/lvm-inactive-boot/</guid><description>Info 硬體 CPU: AMD Ryzen 5800X
+GPU: AMD RX570
+RAM: 16GB
+磁區分配 PV 硬碟 SSD(nvme0n1p5) HHD(sda2) PV size 250GB 250GB VG SSD+HHD: sys
+LV sys/root(根目錄) : SSD 186GB
+sys/home(家目錄) : SSD 64GB(Lvm Cache) + HHD 250GB
+非LVM nvme0n1p1 ( 500MB ): EFI nvme0n1p4 ( 1GB ): /boot 軟體 OS: Linux Mint 20
+其餘軟體預載
+事件 系統正確設置安裝後，開機時會卡在mounting /dev/sys/home，timeout後無法正確啟動
+研究 插入開機碟後發現sys/home不可見，隨後經過googling與探索後發現是不知為何LV inactivated了</description></item><item><title>AWS帳號啟用心得文</title><link>/blog/aws-fail-verify/</link><pubDate>Mon, 17 Aug 2020 00:06:09 +0800</pubDate><guid>/blog/aws-fail-verify/</guid><description>緣由 之前雖然有一個AWS帳號，但因為不知道要拿來玩什麼就沒有動他了。直到最近有幸搶到shrt.tw網域，我想來搞個serverless url shortener，就把AWS帳號翻出來用了。
 結果啟用香港地區的時候居然被帳號啟用卡住，而且電話驗證一直出現要我找客服求救，我等了一天再試也還是不行，就向客服求救了。
 悲劇 本來想說透過步調緩慢的信件來往比較舒服，結果直接回了一封機器人要我Chat，我一整個嚇怕，以為是語音通訊，還好只是線上聊天室而已！
 Chat裡面的客服要我給他手機號碼要幫我做「人工認證」，我給了+886 09XXXXXXXX的電話給他，但&amp;hellip;.我忘記外國手機號碼前面沒有0了，反覆試了好幾個電話都不成功，他要我確認我有沒有拒接外國來電，並跟我說再幫試最後一次，但還是爛掉了，他就不理我了QQ
