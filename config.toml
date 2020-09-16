@@ -2,7 +2,7 @@
 theme = "hugo-theme-codex" 
 
 # Override these settings with your own
-title = "codex"
+title = "jw910731's Blog"
 languageCode = "en-us"
 baseURL = "/"
 copyright = "jw910731© {year}"
