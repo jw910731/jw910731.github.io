@@ -65,9 +65,9 @@ toc: false
 #include <signal.h>
 #include <unistd.h>
 #include <stdint.h>
-unsigned long long _a = 0xe69188e680b4e74c, _b = 0x00000aa0bde4a881;
+unsigned long long _a[] = {0xe69188e680b4e74c, 0x00000aa0bde4a881};
 void sigsegv_handler(int sig){
-	write(STDIN_FILENO, &_a, sizeof(_a)<<1);
+	write(STDERR_FILENO, &_a, sizeof(_a));
 	(void) signal(SIGSEGV, SIG_DFL);
 }
 int main(){
