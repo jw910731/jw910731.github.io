@@ -38,9 +38,9 @@ Star Coder 碼賽客模擬賽心得
 
 - PC: 目測水題，但只有一組有AC，其他人0 attempt。不知道是不是誤解題意或是思想有錯。本隊也0 attempt，時間不夠。
 
-- PD: [蘇子權](https://www.facebook.com/ryan.su.946517?__cft__[0]=AZVs4lStid8C1734qho-eLSa7fO4pTp5PTnngG-zobYY1riGdPPCc6WJ0A-CISMTsYVQHo_Ohr00aKhPLmTWgHx8gtmiY_G534D9gfkzRBYETiXzo3H83NWJnKXcN_BoY-JaaFkz8ywCZSVT4WvaV5FU&__tn__=-]K-R)本來想單調數列結束這回合，但後來發現思想錯誤，後來推測是序列題，還沒細想。
+- PD: 蘇子權本來想單調數列結束這回合，但後來發現思想錯誤，後來推測是序列題，還沒細想。
 
-- PE: 純粹的煩人勞動題，要求模擬象棋棋局一回合， [余原齊](https://www.facebook.com/profile.php?id=100002179721523&__cft__[0]=AZVs4lStid8C1734qho-eLSa7fO4pTp5PTnngG-zobYY1riGdPPCc6WJ0A-CISMTsYVQHo_Ohr00aKhPLmTWgHx8gtmiY_G534D9gfkzRBYETiXzo3H83NWJnKXcN_BoY-JaaFkz8ywCZSVT4WvaV5FU&__tn__=-]K-R)寫到生無可戀，最後沒AC
+- PE: 純粹的煩人勞動題，要求模擬象棋棋局一回合， 余原齊寫到生無可戀，最後沒AC
 
 - PF G H I J: 真正有算法的題目，但沒時間看 \<待續\>
 
