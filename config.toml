@@ -11,7 +11,7 @@ copyright = "jw910731© {year}"
 # disqusShortname = ""
 
 # Add your Google Analytics identifier: UA-XXXXXXXX-X
-# googleAnalytics = "" 
+googleAnalytics = "UA-178403196-1" 
 
 # Optional params
 [params]
