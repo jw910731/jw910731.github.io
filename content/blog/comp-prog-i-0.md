@@ -149,6 +149,9 @@ L紀說其實Mac OS是可以使用的沒問題，~~畢竟不是邪教Windows馬~
   簡易的editor
 
 # Migrate from C++
+
+**感覺這個之後會拉出來寫一篇OwO**
+
 總之如果你之前寫了C++，有些習慣語法需要改一下
 ## `#include <cxxx>` -> `#include <xxx.h>`
 如題，你以前`#include <cstdio>`現在要`#include <stdio.h>`
@@ -164,21 +167,3 @@ C++有關鍵字`new`跟`delete`，物件還有解構子。C語言中的則要仰
 
 # 後記
 總之毒L紀真的頗為毒瘤，不管是裸的C還是Linux真的都比其他學校宗教正確，大家加油ㄅ QwQ
-## 參考模版
-裡面有些有些魔法相信各位隨著時間推移可以感受到他的力量 OwO
-```cpp
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
-#include <stdint.h>
-unsigned long long _a[] = {0xe69188e680b4e74c, 0x00000aa0bde4a881};
-void sigsegv_handler(int sig){
-	write(STDERR_FILENO, &_a, sizeof(_a));
-	(void) signal(SIGSEGV, SIG_DFL);
-}
-int main(){
-	(void) signal(SIGSEGV, sigsegv_handler);
-	// 請在這裡開始你寫 :)
-	return 0; 
-}
-```
