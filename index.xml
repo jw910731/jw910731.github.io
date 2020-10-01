@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>jw910731's Blog</title><link>https://blog.jw910731.wtf/</link><description>Recent content on jw910731's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Thu, 01 Oct 2020 15:45:12 +0800</lastBuildDate><atom:link href="https://blog.jw910731.wtf/index.xml" rel="self" type="application/rss+xml"/><item><title>毒L紀 程設一[3] HW1心得 - MultiTarget Makefile</title><link>https://blog.jw910731.wtf/course/comp-prog-i-3/</link><pubDate>Thu, 01 Oct 2020 15:45:12 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-3/</guid><description>Multi-target Makefile 好吧，我總算要面對這個可怕的事情了。 如果今天一個Makefile要生成多個目標，我應該怎麼辦QwQ
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>jw910731's Blog</title><link>https://blog.jw910731.wtf/</link><description>Recent content on jw910731's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Thu, 01 Oct 2020 22:59:55 +0800</lastBuildDate><atom:link href="https://blog.jw910731.wtf/index.xml" rel="self" type="application/rss+xml"/><item><title>NCPC 2020 心得文</title><link>https://blog.jw910731.wtf/blog/competetive-prog-ncpc-2020/</link><pubDate>Thu, 01 Oct 2020 22:59:55 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competetive-prog-ncpc-2020/</guid><description>題目 個人備份載點
+Title A Partial Fraction B The Magic Square C eBike Battery Drain D Mysterious Message E Navigation Problem F Number Combination Problem G National Challenging Proud Curiosity 心得 戰績：校內第7名，榜單上第25名，沒能晉級QQ
+一如往常，首先感謝隊友不嫌棄我不會寫程式，還願意把我留在隊裡(誤
+感覺這次我們寫扣的穩度不太OK，估複雜度也沒有估好，看題速度也ˊ_&amp;gt;ˋ
+題目心得:
+PA: 聽說是歐幾里德擴展模板題，但我們這隊沒人聽說過是什麼，放棄
+PB: 奇怪勞動題，沒仔細看
+PC: 帶修改(樹邊權)的樹直徑，但事實上修改次數夠少，每次都O(V)求樹直徑是可以的，但我把它想成heavy light decomposition跟LCA了，連精神都沒能AC
+PD: Burrows–Wheeler transform的裸題，但最後想法爛掉了
+PE: 勞動題，沒看</description></item><item><title>毒L紀 程設一[3] HW1心得 - MultiTarget Makefile</title><link>https://blog.jw910731.wtf/course/comp-prog-i-3/</link><pubDate>Thu, 01 Oct 2020 15:45:12 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-3/</guid><description>Multi-target Makefile 好吧，我總算要面對這個可怕的事情了。 如果今天一個Makefile要生成多個目標，我應該怎麼辦QwQ
 後來我找了一些資料後調配了這個Makefile
 CC=gcc CFLAGS=-Wall -Wextra -std=c11 -O2 TARGETS=hw0101 hw0102 hw0103 hw0105 .PHONY: all all: $(TARGETS) .SECONDEXPANSION: $(TARGETS): %: $$*.o %.o: $@.c clean: rm -rf $(TARGETS) $(addsuffix .o,$(TARGETS)) 把TARGETS變數改成想編譯的執行檔檔名(們)，他就會去找同名的.c原始碼檔，把他編譯成對應的執行檔。
 其中用到了一個叫做&amp;quot;Second Expansion&amp;quot;的功能，似乎與Makefile中變數evaluate的時機點有關，不過有些複雜，打算之後讀完再來寫一篇OwO
