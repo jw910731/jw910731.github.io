@@ -3,7 +3,7 @@ title: "毒L紀 程設一[1] Hello World與如何編譯"
 date: 2020-09-18T15:39:55+08:00
 description: ""
 draft: false
-tags: ["Computer Programming I", "毒L紀", "師大課程", "救援"]
+tags: ["Computer Programming I", "毒L紀", "師大", "救援"]
 math: false
 toc: false
 ---

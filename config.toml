@@ -65,6 +65,10 @@ googleAnalytics = "UA-178403196-1"
     name = "blog"
     title = "Blog"
     url = "/blog"
-
+[[menu.main]]
+    identifier = "course"
+    name = "course"
+    title = "Course"
+    url = "/course"
 
 
