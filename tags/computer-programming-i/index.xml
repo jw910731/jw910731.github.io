@@ -1,21 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computer Programming I on jw910731's Blog</title><link>https://blog.jw910731.wtf/tags/computer-programming-i/</link><description>Recent content in Computer Programming I on jw910731's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Wed, 23 Sep 2020 20:58:19 +0800</lastBuildDate><atom:link href="https://blog.jw910731.wtf/tags/computer-programming-i/index.xml" rel="self" type="application/rss+xml"/><item><title>毒L紀 程設一[2] 建構工具</title><link>https://blog.jw910731.wtf/blog/comp-prog-i-2/</link><pubDate>Wed, 23 Sep 2020 20:58:19 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/comp-prog-i-2/</guid><description>Make Intro Make指令會在執行時的word dir底下尋找Makefile這個檔案， 依照裡面的指示編譯你的程式，所以正確編寫Makefile就變成了建立建構系統時的一件重要的事情。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computer Programming I on jw910731's Blog</title><link>https://blog.jw910731.wtf/tags/computer-programming-i/</link><description>Recent content in Computer Programming I on jw910731's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Wed, 23 Sep 2020 20:58:19 +0800</lastBuildDate><atom:link href="https://blog.jw910731.wtf/tags/computer-programming-i/index.xml" rel="self" type="application/rss+xml"/><item><title>毒L紀 程設一[2] 建構工具</title><link>https://blog.jw910731.wtf/course/comp-prog-i-2/</link><pubDate>Wed, 23 Sep 2020 20:58:19 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-2/</guid><description>Make Intro Make指令會在執行時的word dir底下尋找Makefile這個檔案， 依照裡面的指示編譯你的程式，所以正確編寫Makefile就變成了建立建構系統時的一件重要的事情。
 一個最簡單的Makefile大概如下
 .PHONY: gcc -o main main.c 但我個人覺得之後檔案變多，還想加各種編譯參數加入後會變得很難調教，在下面給個我個人覺得很棒的Makefile範例。
 安利時間 make是Linux系統上常見的建構工具，有著強大的功能。這邊展示我個人調教的Makefile
 CC=gcc CFLAGS=-Wall -Wextra -O2 -std=c11 P=main OBJECTS=main.o $(P): $(OBJECTS) clean: rm $(OBJECTS) $(P) 其中要記得把OBJECTS變數設成自己原始檔(source)的名稱(請將副檔名改成.o)，若有多個檔案請以空格隔開，這樣在make執行時就會一併幫你組建好了。CFLAGS可以自己調成自己喜歡的編譯器參數，不管是享受-O3毒瘤的超爽加速還是想請編譯器別噴那麼多Warning都可以。
 這個Makefile很短，且有很高的適應性，在期中期末即使遇到雞掰的要求也能優雅的組建。其中的編譯指令已經以make系統的預設建構指令隱含在裡面了，LDFLAG也因不需要link其他的Library而省略了。
 詳細的Makefile設定方法可以看〈21世紀的C語言〉這本書，上面的Makefile也是在閱讀此書後寫的，書中講述了很多現代C語言在實戰中可以運用的技巧與如何優雅使用C語言，強烈推薦未來想繼續使用C語言的人入手！
-讚曰 文元讚曰，感謝C語言讓我們不用寫組合語言，在此分享Apollo-11登月導航的原始碼，以組合語言寫成。因為有C語言的誕生，我們才能免於如同登月時的電腦工程師一般受到組合語言的摧殘。</description></item><item><title>毒L紀 程設一[1] Hello World與如何編譯</title><link>https://blog.jw910731.wtf/blog/comp-prog-i-1/</link><pubDate>Fri, 18 Sep 2020 15:39:55 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/comp-prog-i-1/</guid><description>Programming 上課範例程式 #include &amp;lt;stdio.h&amp;gt; int main(){ printf(&amp;quot;Hello World!\n&amp;quot;); return 0; } main是C語言定義的Entry Point，程式執行後會呼叫main。
+讚曰 文元讚曰，感謝C語言讓我們不用寫組合語言，在此分享Apollo-11登月導航的原始碼，以組合語言寫成。因為有C語言的誕生，我們才能免於如同登月時的電腦工程師一般受到組合語言的摧殘。</description></item><item><title>毒L紀 程設一[1] Hello World與如何編譯</title><link>https://blog.jw910731.wtf/course/comp-prog-i-1/</link><pubDate>Fri, 18 Sep 2020 15:39:55 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-1/</guid><description>Programming 上課範例程式 #include &amp;lt;stdio.h&amp;gt; int main(){ printf(&amp;quot;Hello World!\n&amp;quot;); return 0; } main是C語言定義的Entry Point，程式執行後會呼叫main。
 printf是格式化輸出的函數，型別為int printf ( const char * format, ... )，也就是說輸入一個「格式化字串」(型別為內容為常數的字元陣列(也是指標))，以及多個格式化字串所需的參數，輸出格式化字串格式化後的結果到標準輸出流。格式化字串的格式以連結為例！
 return 0;事實上是main函數回傳給系統的Exit Code，可以代表程式結束的狀況是正常還是異常，以Linux而言0是正常退出。
 毒瘤程式 #include &amp;lt;unistd.h&amp;gt; int main(){ char s[]=&amp;quot;Hello World!\n&amp;quot;; write(STDOUT_FILENO, s, sizeof(s)); return 0; } 不要問，裸的輸出Fixed Length Byte到stdout的人是瘋子。
 編譯與執行 安利個編譯參數，如下：
 gcc -O2 -std=c11 -Wall -Wextra -o &amp;lt;輸出檔案&amp;gt; &amp;lt;原始碼&amp;gt; 解釋個參數
--O2 幫你優化程式，讓你奇怪的錯誤更容易被發現 -std=c11 告訴編譯器你要寫的程式要用C11的標準來編譯 -Wall -Wextra 叫編譯器多檢查些，但這樣就會出現程式可以編譯，卻會出現警告訊息的狀況，多出來的警告訊息就斟酌參考吧！ 請記得把&amp;lt;原始碼&amp;gt;替換成自己source file的名稱，&amp;lt;輸出檔案&amp;gt;換成你想要編譯完的程式想要的名字</description></item><item><title>毒L紀 程設一[0] 基本Linux開發環境設置</title><link>https://blog.jw910731.wtf/blog/comp-prog-i-0/</link><pubDate>Wed, 16 Sep 2020 22:55:30 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/comp-prog-i-0/</guid><description>垃圾話 毒L紀 = 毒瘤+Linux紀 意指我以毒瘤的稱號讚嘆這個老師足夠狂，敢搬這麼毒瘤的東西出來給大家吸 總之這個系列不定期推出 會放點你可能必須知道的東西，也會放些不建議你抄也不太健康的東西 如何判斷不太健康，就是你感覺看不懂，貼進Google也查不太到正常的解釋，就是不健康 總之什麼都有什麼都不奇怪
+-O2 幫你優化程式，讓你奇怪的錯誤更容易被發現 -std=c11 告訴編譯器你要寫的程式要用C11的標準來編譯 -Wall -Wextra 叫編譯器多檢查些，但這樣就會出現程式可以編譯，卻會出現警告訊息的狀況，多出來的警告訊息就斟酌參考吧！ 請記得把&amp;lt;原始碼&amp;gt;替換成自己source file的名稱，&amp;lt;輸出檔案&amp;gt;換成你想要編譯完的程式想要的名字</description></item><item><title>毒L紀 程設一[0] 基本Linux開發環境設置</title><link>https://blog.jw910731.wtf/course/comp-prog-i-0/</link><pubDate>Wed, 16 Sep 2020 22:55:30 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-0/</guid><description>垃圾話 毒L紀 = 毒瘤+Linux紀
+意指我以毒瘤的稱號讚嘆這個老師足夠狂，敢搬這麼毒瘤的東西出來給大家吸
+總之這個系列不定期推出
+會放點你可能必須知道的東西，也會放些不建議你抄也不太健康的東西
+如何判斷不太健康，就是你感覺看不懂，貼進Google也查不太到正常的解釋，就是不健康
+總之什麼都有什麼都不奇怪
 設置Linux環境 Virtual Machine 你的選擇有
-大陸正版的VMware 免費難用的Virtual box 自由選擇 如何安裝請相信Google小姐的力量 WSL 2 真的很香，究竟更新到2版後有什麼差請見官方比較表 但總之建議不要用WSL 1惹L紀森77，而且那很毒瘤。 安裝教學可以Google也可以看微軟把拔ㄞㄉ教學 總之這傢伙可以給你一個Linux的Command Prompt(命令列)，而且你不需要手動分配固定大小的記憶體給他，他會自己想辦法，網路也互通，檔案可以從/mnt底下看到你的C槽D槽，但不太建議你把平常Linux的檔案放在Windows的檔案目錄下，不然存取檔案的效能可能會GG
+大陸正版的VMware 免費難用的Virtual box 自由選擇 如何安裝請相信Google小姐的力量 WSL 2 真的很香，究竟更新到2版後有什麼差請見
+但總之建議不要用WSL 1惹L紀森77，而且那很毒瘤。
+安裝教學可以Google也可以看
+總之這傢伙可以給你一個Linux的Command Prompt(命令列)，而且你不需要手動分配固定大小的記憶體給他，他會自己想辦法，網路也互通，檔案可以從/mnt底下看到你的C槽D槽，但不太建議你把平常Linux的檔案放在Windows的檔案目錄下，不然存取檔案的效能可能會GG
 Repl.it 這個網站提供Online Editor與Linux Container(可以想成一個人一個隔離的指令列環境)，可以提供輕量化的Linux開發環境，如果只想寫作業不想搞Linux我個人非常推薦。學生可以去註冊Github Student Pack，可以有一年免費Premium的功能！(這不是業配，相信我&amp;gt;.&amp;lt;)
 使用Mac OS X (咦 L紀說其實Mac OS是可以使用的沒問題，畢竟不是邪教Windows馬
 所以有Mac就歡樂的使用吧OwO，記得使用xcode-select --install來安裝編譯工具鍊喔(內含clang與make)，但要注意編譯器與老師使用的gcc不一樣喔OwO，不過大致上除了指令以外沒什麼不相容的。(在mac裡面打gcc其實是clang喔XD)
-設置編寫環境 原生/虛擬機環境/Mac OS X 強推Sublime Text 3給你舒服編譯環境 即使是Mac的使用者也可以一起來喔 這裡送上推薦必備的Plugin
+設置編寫環境 原生/虛擬機環境/Mac OS X 強推Sublime Text 3給你舒服編譯環境
+即使是Mac的使用者也可以一起來喔
+這裡送上推薦必備的Plugin
 Chineese Localization SublimeLinter SublimeLinter-gcc 其中SublimeLinter-gcc在安裝時會提供預設的設定檔，可以跟著附贈的教學操作，使用預設設定檔，就可以有即時的語法檢查了 目前一鍵舒服編譯的工具目前只支援C++，就不放上來了，等我慢慢更新吧QwQ WSL 2 可以使用Visual Studio Code(不是Visual Studio ! ! )的Remote - WSL來在WSL內的環境開發 有興趣的人可以研究看看，我沒在用這個寫C</description></item></channel></rss>
