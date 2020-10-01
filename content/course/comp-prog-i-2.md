@@ -1,7 +1,7 @@
 ---
 date: 2020-09-23T20:58:19+08:00
 title: "毒L紀 程設一[2] 建構工具"
-description: "安利何謂make"
+description: "安利Makefile"
 draft: false
 tags: ["Computer Programming I", "毒L紀", "師大", "救援"]
 math: false
