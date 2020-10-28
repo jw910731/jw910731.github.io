@@ -3,7 +3,7 @@ title: "Archlinux 初體驗"
 date: 2020-10-28T07:17:30+08:00
 description: ""
 keywords: []
-draft: true
+draft: false
 tags: ["Linux", "ArchLinux", "心得"]
 math: false
 toc: false
