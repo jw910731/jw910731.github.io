@@ -25,7 +25,7 @@
 第一題有個我覺得要判掉的測資沒辦法被判掉，緊急Debug
 結束
 最後沒辦法回天乏術，不過賽後才發現那筆測資不用判掉，題目有保證那類測資不會被輸入
-改進 整體沒有達到該有的表現，而且測驗環境沒有好好測試，導致使用的Makefile沒有抓到有這個嚴重的問題(在Mac上是好的&amp;hellip;.) 總之，我認文不應該再犯這種錯了！下次程設期末考，我打算引進版本控制，並以隨身碟作為遠端分支，進行電腦崩潰時的備份，如果可以還希望可以引進 CI / CD 等想法的自動化套件，自動化編譯並節省所花費的時間！
+改進 整體沒有達到該有的表現，而且測驗環境沒有好好測試，導致使用的Makefile沒有抓到有這個嚴重的問題(在Mac上是好的&amp;hellip;.) 總之，我認為不應該再犯這種錯了！下次程設期末考，我打算引進版本控制，並以隨身碟作為遠端分支，進行電腦崩潰時的備份，如果可以還希望可以引進 CI / CD 等想法的自動化套件，自動化編譯並節省所花費的時間！
 同時，我打算以期末破台為目標，好好調教我的環境XDDD，不要再只花1個小時趕工垃圾考試環境了wwwww</description></item><item><title>ICPC Singapore 2015 Regional 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</link><pubDate>Fri, 06 Nov 2020 01:22:44 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</guid><description>題目 NAME A Association for Cool Machineries (Part 1) B Association for Cool Machineries (Part 2) C Association for Control Over Minds D Association of Computer Maintenance E Association for Computing Machinery F Air Conditioned Minions G Association for the Country of Mububa H Association for Convex Main Office I Apples, Cherries, and Mangos J Association of Camera Makers K Association of Cats and Magical Lights 心得 這次首先感謝原齊神之思路，以及子權的 $ O(n) $ 算法 TLE ( $2\leq n\leq 100$ )</description></item><item><title>NCPC 2020 心得文</title><link>https://blog.jw910731.wtf/blog/competitive-prog-ncpc-2020/</link><pubDate>Thu, 01 Oct 2020 22:59:55 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-ncpc-2020/</guid><description>題目 個人備份載點
 Title A Partial Fraction B The Magic Square C eBike Battery Drain D Mysterious Message E Navigation Problem F Number Combination Problem G National Challenging Proud Curiosity 心得 戰績：校內第7名，榜單上第25名，沒能晉級QQ
 一如往常，首先感謝隊友不嫌棄我不會寫程式，還願意把我留在隊裡(誤

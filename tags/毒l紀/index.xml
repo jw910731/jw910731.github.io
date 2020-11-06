@@ -25,7 +25,7 @@
 第一題有個我覺得要判掉的測資沒辦法被判掉，緊急Debug
 結束
 最後沒辦法回天乏術，不過賽後才發現那筆測資不用判掉，題目有保證那類測資不會被輸入
-改進 整體沒有達到該有的表現，而且測驗環境沒有好好測試，導致使用的Makefile沒有抓到有這個嚴重的問題(在Mac上是好的&amp;hellip;.) 總之，我認文不應該再犯這種錯了！下次程設期末考，我打算引進版本控制，並以隨身碟作為遠端分支，進行電腦崩潰時的備份，如果可以還希望可以引進 CI / CD 等想法的自動化套件，自動化編譯並節省所花費的時間！
+改進 整體沒有達到該有的表現，而且測驗環境沒有好好測試，導致使用的Makefile沒有抓到有這個嚴重的問題(在Mac上是好的&amp;hellip;.) 總之，我認為不應該再犯這種錯了！下次程設期末考，我打算引進版本控制，並以隨身碟作為遠端分支，進行電腦崩潰時的備份，如果可以還希望可以引進 CI / CD 等想法的自動化套件，自動化編譯並節省所花費的時間！
 同時，我打算以期末破台為目標，好好調教我的環境XDDD，不要再只花1個小時趕工垃圾考試環境了wwwww</description></item><item><title>毒L紀 程設一[3] HW1心得 - MultiTarget Makefile</title><link>https://blog.jw910731.wtf/course/comp-prog-i-3/</link><pubDate>Thu, 01 Oct 2020 15:45:12 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-3/</guid><description>Multi-target Makefile 好吧，我總算要面對這個可怕的事情了。 如果今天一個Makefile要生成多個目標，我應該怎麼辦QwQ
 後來我找了一些資料後調配了這個Makefile
 CC=gcc CFLAGS=-Wall -Wextra -std=c11 -O2 TARGETS=hw0101 hw0102 hw0103 hw0105 .PHONY: all all: $(TARGETS) .SECONDEXPANSION: $(TARGETS): %: $$*.o %.o: $@.c clean: rm -rf $(TARGETS) $(addsuffix .o,$(TARGETS)) 把TARGETS變數改成想編譯的執行檔檔名(們)，他就會去找同名的.c原始碼檔，把他編譯成對應的執行檔。
