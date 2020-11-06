@@ -3,7 +3,7 @@ title: "毒L紀 程設一[??] 期中考反省文"
 date: 2020-11-07T01:07:54+08:00
 description: "期中考爛了，就該反省啊 哪次不反省"
 keywords: []
-draft: true
+draft: false
 tags: ["Computer Programming I", "毒L紀", "師大", "心得"]
 math: false
 toc: false
