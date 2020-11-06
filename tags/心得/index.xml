@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>心得 on jw910731's Blog</title><link>https://blog.jw910731.wtf/tags/%E5%BF%83%E5%BE%97/</link><description>Recent content in 心得 on jw910731's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Fri, 06 Nov 2020 01:22:44 +0800</lastBuildDate><atom:link href="https://blog.jw910731.wtf/tags/%E5%BF%83%E5%BE%97/index.xml" rel="self" type="application/rss+xml"/><item><title>ICPC Singapore 2015 Regional 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</link><pubDate>Fri, 06 Nov 2020 01:22:44 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</guid><description>題目 NAME A Association for Cool Machineries (Part 1) B Association for Cool Machineries (Part 2) C Association for Control Over Minds D Association of Computer Maintenance E Association for Computing Machinery F Air Conditioned Minions G Association for the Country of Mububa H Association for Convex Main Office I Apples, Cherries, and Mangos J Association of Camera Makers K Association of Cats and Magical Lights 心得 這次首先感謝原齊神之思路，以及子權的 $ O(n) $ 算法 TLE ( $2\leq n\leq 100$ )</description></item><item><title>Archlinux 初體驗</title><link>https://blog.jw910731.wtf/blog/first-time-archlinux/</link><pubDate>Wed, 28 Oct 2020 07:17:30 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/first-time-archlinux/</guid><description>前言 好吧，總之我就是腦袋撞到突然起意，看到某程設老師的電腦好像是 arch 誒，就來裝 ArchLinux 順便挑戰自己的 Linux 程度吧，畢竟用了 Linux 那麼久，再繼續被某 Linux Distrobution 和 snap 綁架也就太難看了。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>心得 on jw910731's Blog</title><link>https://blog.jw910731.wtf/tags/%E5%BF%83%E5%BE%97/</link><description>Recent content in 心得 on jw910731's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Sat, 07 Nov 2020 01:07:54 +0800</lastBuildDate><atom:link href="https://blog.jw910731.wtf/tags/%E5%BF%83%E5%BE%97/index.xml" rel="self" type="application/rss+xml"/><item><title>毒L紀 程設一[??] 期中考反省文</title><link>https://blog.jw910731.wtf/course/comp-prog-i-midterm/</link><pubDate>Sat, 07 Nov 2020 01:07:54 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-midterm/</guid><description>心得 這次的期中考我大翻車，整個就是因為沒有好好認真看待這次考試，考完這次之後我覺得程式設計根本就已經是低配版的軟體工程了 ( 我是說整體課堂要求，不是授課內容 )。不過我依舊覺得很有趣，比起其他學校那種「正常」我會想翹掉的程式設計課，我倒覺得這麼邪惡也很有趣！
+時辰心得 (時間以時間戳表示)
+00:30
+一開始我看了一下題目，覺得不太難，我為了正常發會，就不給自己那麼多壓力，慢慢寫
+第一題差不多這個時候解決掉了
+01:00
+終於刻完第二題的向量基礎模板了，不過有些公式寫進去了還沒過編譯測試
+突然發現進度不太好，所以先解決第三題
+01:10
+第三題解決，核心業務我只花了一分半寫，剩下來都在做周圍的檢查。
+01:30
+第二題的進度不盡理想，所以先讀第四題的前半部分，發現第四題勞動太多，剩下的時間寫不出來
+01:50
+第二題瑣碎的問題差不多解決了，準備編譯，才發現Makefile在Linking Stage的參數傳遞狀況不好，無法做Linking
+快速修改Makefile時，不小心把Source Code刪掉了！
+02:00
+開始著手恢復第一題
+02:10
+完成第一題大部分的恢復
+02:15
+著手第三題恢復
+02:20
+第三題恢復完成
+02:25
+第一題有個我覺得要判掉的測資沒辦法被判掉，緊急Debug
+結束
+最後沒辦法回天乏術，不過賽後才發現那筆測資不用判掉，題目有保證那類測資不會被輸入
+改進 整體沒有達到該有的表現，而且測驗環境沒有好好測試，導致使用的Makefile沒有抓到有這個嚴重的問題(在Mac上是好的&amp;hellip;.) 總之，我認文不應該再犯這種錯了！下次程設期末考，我打算引進版本控制，並以隨身碟作為遠端分支，進行電腦崩潰時的備份，如果可以還希望可以引進 CI / CD 等想法的自動化套件，自動化編譯並節省所花費的時間！
+同時，我打算以期末破台為目標，好好調教我的環境XDDD，不要再只花1個小時趕工垃圾考試環境了wwwww</description></item><item><title>ICPC Singapore 2015 Regional 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</link><pubDate>Fri, 06 Nov 2020 01:22:44 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</guid><description>題目 NAME A Association for Cool Machineries (Part 1) B Association for Cool Machineries (Part 2) C Association for Control Over Minds D Association of Computer Maintenance E Association for Computing Machinery F Air Conditioned Minions G Association for the Country of Mububa H Association for Convex Main Office I Apples, Cherries, and Mangos J Association of Camera Makers K Association of Cats and Magical Lights 心得 這次首先感謝原齊神之思路，以及子權的 $ O(n) $ 算法 TLE ( $2\leq n\leq 100$ )</description></item><item><title>Archlinux 初體驗</title><link>https://blog.jw910731.wtf/blog/first-time-archlinux/</link><pubDate>Wed, 28 Oct 2020 07:17:30 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/first-time-archlinux/</guid><description>前言 好吧，總之我就是腦袋撞到突然起意，看到某程設老師的電腦好像是 arch 誒，就來裝 ArchLinux 順便挑戰自己的 Linux 程度吧，畢竟用了 Linux 那麼久，再繼續被某 Linux Distrobution 和 snap 綁架也就太難看了。
 本次安裝環境選擇安全一些的 VMWare Fusion 虛擬機，反正免費的不拿嗎？XD
 硬碟30GB RAM 1024MB 3D Acceleration RAM 給少是因為想裝 light 一點的的 Linux 在 Mac 上，僅是為了補足 CTF 和惡搞時需要 Linux 的需求
 過程 本次的安裝完全以此Arch Linux 官方文件進行
