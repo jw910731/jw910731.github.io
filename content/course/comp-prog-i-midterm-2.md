@@ -1,5 +1,5 @@
 ---
-title: "毒L紀 程設一[??] 期中考反省文2 懷疑Build System前先懷疑你寫的垃圾Source"
+title: "毒L紀 程設一[??] 期中考反省文2—懷疑Build System前先懷疑你寫的垃圾Source"
 date: 2020-11-11T15:58:48+08:00
 description: ""
 keywords: []
@@ -17,6 +17,12 @@ toc: false
 
 以後，**如果 Build System 爛掉，先懷疑自己寫的程式爛掉再說了！**
 
+# 心得—補
+
+然後我在Linux上面跑的時候又壞掉了，所以後來就更新了 Makefile
+
+看來是`clang`跟`gcc`在處理 linker flag 的方式不同，而 GNU make 預設處理 `LDFLAG` 的方法是`gcc`無法正確傳遞給 linker 的格式，才導致考試時 Link 會失敗，但我自己在 Mac OS 上測是好的的問題。
+
 # Makefile Demo
 
 附上被我證明依舊好用的 Makefile
@@ -27,10 +33,10 @@ CFLAGS=-Wall -Wextra -std=c11 -O2
 LDFLAGS=-lm
 
 TARGETS=mid01 mid02 mid03 mid04
-mid01_OBJ=mid01.o
-mid02_OBJ=basic_math.o mid02.o
-mid03_OBJ=mid03.o
-mid04_OBJ=mid04.o
+mid01_OBJ=mid01.o basic.o
+mid02_OBJ=basic_math.o mid02.o basic.o
+mid03_OBJ=mid03.o basic.o
+mid04_OBJ=mid04.o basic.o
 
 .PHONY: all
 
@@ -38,6 +44,7 @@ all: $(TARGETS)
 
 .SECONDEXPANSION:
 $(TARGETS): $$($$@_OBJ)
+	$(CC) $^ -o $@ $(LDFLAGS)
 
 %.o: $@.c
 
