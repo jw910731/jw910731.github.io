@@ -2,6 +2,8 @@ name: github pages
 
 on:
   push:
+    branches:    
+      - master
     paths: ["content/**", ".github/workflows/hugo_publish.yml", "config.toml", "layouts/**", "static/**"]
 
 jobs:
