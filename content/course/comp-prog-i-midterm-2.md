@@ -1,7 +1,7 @@
 ---
 title: "毒L紀 程設一[??] 期中考反省文2—懷疑Build System前先懷疑你寫的垃圾Source"
 date: 2020-11-11T15:58:48+08:00
-description: ""
+description: "反省Makefile啊QQQQQ"
 keywords: []
 draft: false
 tags: ["Computer Programming I", "毒L紀", "師大", "心得"]
