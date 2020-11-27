@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>心得 on jw910731's Blog</title><link>https://blog.jw910731.wtf/tags/%E5%BF%83%E5%BE%97/</link><description>Recent content in 心得 on jw910731's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Wed, 11 Nov 2020 15:58:48 +0800</lastBuildDate><atom:link href="https://blog.jw910731.wtf/tags/%E5%BF%83%E5%BE%97/index.xml" rel="self" type="application/rss+xml"/><item><title>毒L紀 程設一[??] 期中考反省文2—懷疑Build System前先懷疑你寫的垃圾Source</title><link>https://blog.jw910731.wtf/course/comp-prog-i-midterm-2/</link><pubDate>Wed, 11 Nov 2020 15:58:48 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-midterm-2/</guid><description>心得 今天我開始好好檢視「傳說中」爛掉的 Makefile 與 Sources ，反覆思考總覺得那個 Error Message 很奇怪，明明出錯的檔案裡面有複數個 Symbol ，但報錯的總是特定的那幾個！在有了上次 Cmake 壞掉的經驗後，我決定往 Sources 出錯的方向做調查。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>心得 on jw910731's Blog</title><link>https://blog.jw910731.wtf/tags/%E5%BF%83%E5%BE%97/</link><description>Recent content in 心得 on jw910731's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 11 Nov 2020 15:58:48 +0800</lastBuildDate><atom:link href="https://blog.jw910731.wtf/tags/%E5%BF%83%E5%BE%97/index.xml" rel="self" type="application/rss+xml"/><item><title>毒L紀 程設一[??] 期中考反省文2—懷疑Build System前先懷疑你寫的垃圾Source</title><link>https://blog.jw910731.wtf/course/comp-prog-i-midterm-2/</link><pubDate>Wed, 11 Nov 2020 15:58:48 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-midterm-2/</guid><description>心得 今天我開始好好檢視「傳說中」爛掉的 Makefile 與 Sources ，反覆思考總覺得那個 Error Message 很奇怪，明明出錯的檔案裡面有複數個 Symbol ，但報錯的總是特定的那幾個！在有了上次 Cmake 壞掉的經驗後，我決定往 Sources 出錯的方向做調查。
 後來仔細檢查之後才發現&amp;hellip;.我有一個Symbol實作被我刪掉了，我卻沒有發現&amp;hellip;，所以Linking Stage時有使用該函數的實作就會出錯 QwQ
 以後，如果 Build System 爛掉，先懷疑自己寫的程式爛掉再說了！
 心得—補 然後我在Linux上面跑的時候又壞掉了，所以後來就更新了 Makefile
-看來是clang跟gcc在處理 linker flag 的方式不同，而 GNU make 預設處理 LDFLAG 的方法是gcc無法正確傳遞給 linker 的格式，才導致考試時 Link 會失敗，但我自己在 Mac OS 上測是好的的問題。
-Makefile Demo 附上被我證明依舊好用的 Makefile
-CC=gcc CFLAGS=-Wall -Wextra -std=c11 -O2 LDFLAGS=-lm TARGETS=mid01 mid02 mid03 mid04 mid01_OBJ=mid01.o basic.o mid02_OBJ=basic_math.o mid02.o basic.o mid03_OBJ=mid03.o basic.o mid04_OBJ=mid04.o basic.o .PHONY: all all: $(TARGETS) .SECONDEXPANSION: $(TARGETS): $$($$@_OBJ) $(CC) $^ -o $@ $(LDFLAGS) %.</description></item><item><title>毒L紀 程設一[??] 期中考反省文</title><link>https://blog.jw910731.wtf/course/comp-prog-i-midterm/</link><pubDate>Sat, 07 Nov 2020 01:07:54 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-midterm/</guid><description>心得 這次的期中考我大翻車，整個就是因為沒有好好認真看待這次考試，考完這次之後我覺得程式設計根本就已經是低配版的軟體工程了 ( 我是說整體課堂要求，不是授課內容 )。不過我依舊覺得很有趣，比起其他學校那種「正常」我會想翹掉的程式設計課，我倒覺得這麼邪惡也很有趣！
+看來是clang跟gcc在處理 linker flag 的方式不同，而 GNU make 預設處理 LDFLAG 的方法是gcc無法正確傳遞給 linker 的格式，才導致考試時 Link 會失敗，但我自己在 Mac OS 上測是好的的問題。</description></item><item><title>毒L紀 程設一[??] 期中考反省文</title><link>https://blog.jw910731.wtf/course/comp-prog-i-midterm/</link><pubDate>Sat, 07 Nov 2020 01:07:54 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-midterm/</guid><description>心得 這次的期中考我大翻車，整個就是因為沒有好好認真看待這次考試，考完這次之後我覺得程式設計根本就已經是低配版的軟體工程了 ( 我是說整體課堂要求，不是授課內容 )。不過我依舊覺得很有趣，比起其他學校那種「正常」我會想翹掉的程式設計課，我倒覺得這麼邪惡也很有趣！
 時辰心得 (時間以時間戳表示)
 00:30
 一開始我看了一下題目，覺得不太難，我為了正常發會，就不給自己那麼多壓力，慢慢寫
@@ -17,46 +15,13 @@ CC=gcc CFLAGS=-Wall -Wextra -std=c11 -O2 LDFLAGS=-lm TARGETS=mid01 mid02 mid03 m
 01:30
 第二題的進度不盡理想，所以先讀第四題的前半部分，發現第四題勞動太多，剩下的時間寫不出來
 01:50
-第二題瑣碎的問題差不多解決了，準備編譯，才發現Makefile在Linking Stage的參數傳遞狀況不好，無法做Linking
-快速修改Makefile時，不小心把Source Code刪掉了！
-02:00
-開始著手恢復第一題
-02:10
-完成第一題大部分的恢復
-02:15
-著手第三題恢復
-02:20
-第三題恢復完成
-02:25
-第一題有個我覺得要判掉的測資沒辦法被判掉，緊急Debug
-結束
-最後沒辦法回天乏術，不過賽後才發現那筆測資不用判掉，題目有保證那類測資不會被輸入
-改進 整體沒有達到該有的表現，而且測驗環境沒有好好測試，導致使用的Makefile沒有抓到有這個嚴重的問題(在Mac上是好的&amp;hellip;.) 總之，我認為不應該再犯這種錯了！下次程設期末考，我打算引進版本控制，並以隨身碟作為遠端分支，進行電腦崩潰時的備份，如果可以還希望可以引進 CI / CD 等想法的自動化套件，自動化編譯並節省所花費的時間！
-同時，我打算以期末破台為目標，好好調教我的環境XDDD，不要再只花1個小時趕工垃圾考試環境了wwwww</description></item><item><title>ICPC Singapore 2015 Regional 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</link><pubDate>Fri, 06 Nov 2020 01:22:44 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</guid><description>題目 NAME A Association for Cool Machineries (Part 1) B Association for Cool Machineries (Part 2) C Association for Control Over Minds D Association of Computer Maintenance E Association for Computing Machinery F Air Conditioned Minions G Association for the Country of Mububa H Association for Convex Main Office I Apples, Cherries, and Mangos J Association of Camera Makers K Association of Cats and Magical Lights 心得 這次首先感謝原齊神之思路，以及子權的 $ O(n) $ 算法 TLE ( $2\leq n\leq 100$ )</description></item><item><title>Archlinux 初體驗</title><link>https://blog.jw910731.wtf/blog/first-time-archlinux/</link><pubDate>Wed, 28 Oct 2020 07:17:30 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/first-time-archlinux/</guid><description>前言 好吧，總之我就是腦袋撞到突然起意，看到某程設老師的電腦好像是 arch 誒，就來裝 ArchLinux 順便挑戰自己的 Linux 程度吧，畢竟用了 Linux 那麼久，再繼續被某 Linux Distrobution 和 snap 綁架也就太難看了。
+第二題瑣碎的問題差不多解決了，準備編譯，才發現Makefile在Linking Stage的參數傳遞狀況不好，無法做Linking</description></item><item><title>ICPC Singapore 2015 Regional 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</link><pubDate>Fri, 06 Nov 2020 01:22:44 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</guid><description>題目 NAME A Association for Cool Machineries (Part 1) B Association for Cool Machineries (Part 2) C Association for Control Over Minds D Association of Computer Maintenance E Association for Computing Machinery F Air Conditioned Minions G Association for the Country of Mububa H Association for Convex Main Office I Apples, Cherries, and Mangos J Association of Camera Makers K Association of Cats and Magical Lights 心得 這次首先感謝原齊神之思路，以及子權的 $ O(n) $ 算法 TLE ( $2\leq n\leq 100$ )</description></item><item><title>Archlinux 初體驗</title><link>https://blog.jw910731.wtf/blog/first-time-archlinux/</link><pubDate>Wed, 28 Oct 2020 07:17:30 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/first-time-archlinux/</guid><description>前言 好吧，總之我就是腦袋撞到突然起意，看到某程設老師的電腦好像是 arch 誒，就來裝 ArchLinux 順便挑戰自己的 Linux 程度吧，畢竟用了 Linux 那麼久，再繼續被某 Linux Distrobution 和 snap 綁架也就太難看了。
 本次安裝環境選擇安全一些的 VMWare Fusion 虛擬機，反正免費的不拿嗎？XD
-硬碟30GB RAM 1024MB 3D Acceleration RAM 給少是因為想裝 light 一點的的 Linux 在 Mac 上，僅是為了補足 CTF 和惡搞時需要 Linux 的需求
-過程 本次的安裝完全以此Arch Linux 官方文件進行
-第一個遇到的問題應該是用fdisk切分割區拉，以前在圖形安裝環境下有Gparted等圖形介面可以用，雖然依舊有用fdisk手切過的經驗，可是還是會怕把分割區切爛。結果意外的還算順利，唯一遇到的的問題是解析度有點糟糕，所以常常整頁的列表會被切掉，上面的部分看不到 QQ
-這次分割區配置是
-Partition Type(MountPoint) Size /dev/sda1 Linux(/) 28GB /dev/sda2 Linux Swap 2GB 接著就是安裝套件、設定/etc/fstab、設定時區、處理 initramfs 等繁瑣的小事了。 最後我還差點忘記安裝Bootloader，裝完還忘記做設定，真是蠢爆了， Tutorial 真的要好好看完啊！</description></item><item><title>NCPC 2020 心得文</title><link>https://blog.jw910731.wtf/blog/competitive-prog-ncpc-2020/</link><pubDate>Thu, 01 Oct 2020 22:59:55 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-ncpc-2020/</guid><description>題目 個人備份載點
-Title A Partial Fraction B The Magic Square C eBike Battery Drain D Mysterious Message E Navigation Problem F Number Combination Problem G National Challenging Proud Curiosity 心得 戰績：校內第7名，榜單上第25名，沒能晉級QQ
-一如往常，首先感謝隊友不嫌棄我不會寫程式，還願意把我留在隊裡(誤
-感覺這次我們寫扣的穩度不太OK，估複雜度也沒有估好，看題速度也ˊ_&amp;gt;ˋ
-題目心得:
-PA: 聽說是歐幾里德擴展模板題，但我們這隊沒人聽說過是什麼，放棄
-PB: 奇怪勞動題，沒仔細看
-PC: 帶修改(樹邊權)的樹直徑，但事實上修改次數夠少，每次都O(V)求樹直徑是可以的，但我把它想成heavy light decomposition跟LCA了，連精神都沒能AC
-PD: Burrows–Wheeler transform的裸題，但最後想法爛掉了
-PE: 勞動題，沒看</description></item><item><title>2020/09/18 師大碼賽客 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-2020-09-18/</link><pubDate>Fri, 18 Sep 2020 23:59:33 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-2020-09-18/</guid><description>題目 Origin Title A UVA 10530 Guessing Game B UVA 12428 Enemy at the Gates C UVALive 6693 Flow Game D UVALive 6692 Lucky Number E UVA 1589 Xiangqi F UVALive 7003 A Balance Game on Trees G UVA 11419 SAM I AM H UVA 11324 The Largest Clique I UVA 11825 Hackers&amp;rsquo; Crackdown J UVA 10462 Is There A Second Way Left?</description></item><item><title>Linux 邏輯磁區在重開後變為 inactivate</title><link>https://blog.jw910731.wtf/blog/lvm-inactive-boot/</link><pubDate>Wed, 26 Aug 2020 15:38:57 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/lvm-inactive-boot/</guid><description>Info 硬體 CPU: AMD Ryzen 3800X
+硬碟30GB RAM 1024MB 3D Acceleration RAM 給少是因為想裝 light 一點的的 Linux 在 Mac 上，僅是為了補足 CTF 和惡搞時需要 Linux 的需求</description></item><item><title>NCPC 2020 心得文</title><link>https://blog.jw910731.wtf/blog/competitive-prog-ncpc-2020/</link><pubDate>Thu, 01 Oct 2020 22:59:55 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-ncpc-2020/</guid><description>題目 個人備份載點
+Title A Partial Fraction B The Magic Square C eBike Battery Drain D Mysterious Message E Navigation Problem F Number Combination Problem G National Challenging Proud Curiosity 心得 戰績：校內第7名，榜單上第25名，沒能晉級QQ</description></item><item><title>2020/09/18 師大碼賽客 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-2020-09-18/</link><pubDate>Fri, 18 Sep 2020 23:59:33 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-2020-09-18/</guid><description>題目 Origin Title A UVA 10530 Guessing Game B UVA 12428 Enemy at the Gates C UVALive 6693 Flow Game D UVALive 6692 Lucky Number E UVA 1589 Xiangqi F UVALive 7003 A Balance Game on Trees G UVA 11419 SAM I AM H UVA 11324 The Largest Clique I UVA 11825 Hackers&amp;rsquo; Crackdown J UVA 10462 Is There A Second Way Left?</description></item><item><title>Linux 邏輯磁區在重開後變為 inactivate</title><link>https://blog.jw910731.wtf/blog/lvm-inactive-boot/</link><pubDate>Wed, 26 Aug 2020 15:38:57 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/lvm-inactive-boot/</guid><description>Info 硬體 CPU: AMD Ryzen 3800X
 GPU: AMD RX570
 RAM: 16GB
-磁區分配 PV 硬碟 SSD(nvme0n1p5) HHD(sda2) PV size 250GB 250GB VG SSD+HHD: sys
-LV sys/root(根目錄) : SSD 186GB
-sys/home(家目錄) : SSD 64GB(Lvm Cache) + HHD 250GB
-非LVM nvme0n1p1 ( 500MB ): EFI nvme0n1p4 ( 1GB ): /boot 軟體 OS: Linux Mint 20
-其餘軟體預載
-事件 系統正確設置安裝後，開機時會卡在mounting /dev/sys/home，timeout後無法正確啟動
-研究 插入開機碟後發現sys/home不可見，隨後經過googling與探索後發現是不知為何LV inactivated了</description></item><item><title>AWS帳號啟用心得文</title><link>https://blog.jw910731.wtf/blog/aws-fail-verify/</link><pubDate>Mon, 17 Aug 2020 00:06:09 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/aws-fail-verify/</guid><description>緣由 之前雖然有一個AWS帳號，但因為不知道要拿來玩什麼就沒有動他了。直到最近有幸搶到shrt.tw網域，我想來搞個serverless url shortener，就把AWS帳號翻出來用了。
+磁區分配 PV 硬碟 SSD(nvme0n1p5) HHD(sda2) PV size 250GB 250GB VG SSD+HHD: sys</description></item><item><title>AWS帳號啟用心得文</title><link>https://blog.jw910731.wtf/blog/aws-fail-verify/</link><pubDate>Mon, 17 Aug 2020 00:06:09 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/aws-fail-verify/</guid><description>緣由 之前雖然有一個AWS帳號，但因為不知道要拿來玩什麼就沒有動他了。直到最近有幸搶到shrt.tw網域，我想來搞個serverless url shortener，就把AWS帳號翻出來用了。
 結果啟用香港地區的時候居然被帳號啟用卡住，而且電話驗證一直出現要我找客服求救，我等了一天再試也還是不行，就向客服求救了。
 悲劇 本來想說透過步調緩慢的信件來往比較舒服，結果直接回了一封機器人要我Chat，我一整個嚇怕，以為是語音通訊，還好只是線上聊天室而已！
 Chat裡面的客服要我給他手機號碼要幫我做「人工認證」，我給了+886 09XXXXXXXX的電話給他，但&amp;hellip;.我忘記外國手機號碼前面沒有0了，反覆試了好幾個電話都不成功，他要我確認我有沒有拒接外國來電，並跟我說再幫試最後一次，但還是爛掉了，他就不理我了QQ

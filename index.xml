@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>jw910731's Blog</title><link>https://blog.jw910731.wtf/</link><description>Recent content on jw910731's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>jw910731© {year}</copyright><lastBuildDate>Wed, 11 Nov 2020 15:58:48 +0800</lastBuildDate><atom:link href="https://blog.jw910731.wtf/index.xml" rel="self" type="application/rss+xml"/><item><title>毒L紀 程設一[??] 期中考反省文2—懷疑Build System前先懷疑你寫的垃圾Source</title><link>https://blog.jw910731.wtf/course/comp-prog-i-midterm-2/</link><pubDate>Wed, 11 Nov 2020 15:58:48 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-midterm-2/</guid><description>心得 今天我開始好好檢視「傳說中」爛掉的 Makefile 與 Sources ，反覆思考總覺得那個 Error Message 很奇怪，明明出錯的檔案裡面有複數個 Symbol ，但報錯的總是特定的那幾個！在有了上次 Cmake 壞掉的經驗後，我決定往 Sources 出錯的方向做調查。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>jw910731's Blog</title><link>https://blog.jw910731.wtf/</link><description>Recent content on jw910731's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 11 Nov 2020 15:58:48 +0800</lastBuildDate><atom:link href="https://blog.jw910731.wtf/index.xml" rel="self" type="application/rss+xml"/><item><title>毒L紀 程設一[??] 期中考反省文2—懷疑Build System前先懷疑你寫的垃圾Source</title><link>https://blog.jw910731.wtf/course/comp-prog-i-midterm-2/</link><pubDate>Wed, 11 Nov 2020 15:58:48 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-midterm-2/</guid><description>心得 今天我開始好好檢視「傳說中」爛掉的 Makefile 與 Sources ，反覆思考總覺得那個 Error Message 很奇怪，明明出錯的檔案裡面有複數個 Symbol ，但報錯的總是特定的那幾個！在有了上次 Cmake 壞掉的經驗後，我決定往 Sources 出錯的方向做調查。
 後來仔細檢查之後才發現&amp;hellip;.我有一個Symbol實作被我刪掉了，我卻沒有發現&amp;hellip;，所以Linking Stage時有使用該函數的實作就會出錯 QwQ
 以後，如果 Build System 爛掉，先懷疑自己寫的程式爛掉再說了！
 心得—補 然後我在Linux上面跑的時候又壞掉了，所以後來就更新了 Makefile
-看來是clang跟gcc在處理 linker flag 的方式不同，而 GNU make 預設處理 LDFLAG 的方法是gcc無法正確傳遞給 linker 的格式，才導致考試時 Link 會失敗，但我自己在 Mac OS 上測是好的的問題。
-Makefile Demo 附上被我證明依舊好用的 Makefile
-CC=gcc CFLAGS=-Wall -Wextra -std=c11 -O2 LDFLAGS=-lm TARGETS=mid01 mid02 mid03 mid04 mid01_OBJ=mid01.o basic.o mid02_OBJ=basic_math.o mid02.o basic.o mid03_OBJ=mid03.o basic.o mid04_OBJ=mid04.o basic.o .PHONY: all all: $(TARGETS) .SECONDEXPANSION: $(TARGETS): $$($$@_OBJ) $(CC) $^ -o $@ $(LDFLAGS) %.</description></item><item><title>Cmake Link Failed on Mac OS X</title><link>https://blog.jw910731.wtf/blog/cmake-link-fail-2020-11-10/</link><pubDate>Tue, 10 Nov 2020 00:44:37 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/cmake-link-fail-2020-11-10/</guid><description>Info Cmake : ver. 3.18.4 Mac OS X : ver. 10.15.7 事件 我最近開了個 Side Project ，但他的 Cmake 組建系統在 Mac OS X 上一直無法成功組建，錯誤訊息都是在連結時ranlib報告說發現某個特定的 Object File 中沒有 Symbol 。
-一開始我便換了個平台 ( Linux 系統 ) 做組建，可以成功組建，因此我便往「 Cmake 與 Mac OS X 自帶的 Tool Chain 會有衝突」這個方向研究，事實上有找到不少資料都產生了與我類似的問題，但都沒有幫助。找到比較有關的是說在 Mac 上多執行緒的組建有蟲，沒辦法正確做 Linking ，但我試著將組建系統單執行緒化也仍然會有這個問題。
-後來我轉而往我手上有的材料做調查，我細心地看了每個 Cmake 產出來的 Makefile 並了解他的架構，然後找到各個編譯出來的 Object File 做objdump。發現那個被ranlib報錯的 Object File 確實沒有 Symbol ，我一氣之下便用 ( 真的 ) gcc 來手動編譯這個檔案，卻發現我仍然得到沒有 Symbol 的 Object File ，心頭一震，我突然覺得應該是我的 Source FIle 寫爛了。</description></item><item><title>毒L紀 程設一[??] 期中考反省文</title><link>https://blog.jw910731.wtf/course/comp-prog-i-midterm/</link><pubDate>Sat, 07 Nov 2020 01:07:54 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-midterm/</guid><description>心得 這次的期中考我大翻車，整個就是因為沒有好好認真看待這次考試，考完這次之後我覺得程式設計根本就已經是低配版的軟體工程了 ( 我是說整體課堂要求，不是授課內容 )。不過我依舊覺得很有趣，比起其他學校那種「正常」我會想翹掉的程式設計課，我倒覺得這麼邪惡也很有趣！
+看來是clang跟gcc在處理 linker flag 的方式不同，而 GNU make 預設處理 LDFLAG 的方法是gcc無法正確傳遞給 linker 的格式，才導致考試時 Link 會失敗，但我自己在 Mac OS 上測是好的的問題。</description></item><item><title>Cmake Link Failed on Mac OS X</title><link>https://blog.jw910731.wtf/blog/cmake-link-fail-2020-11-10/</link><pubDate>Tue, 10 Nov 2020 00:44:37 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/cmake-link-fail-2020-11-10/</guid><description>Info Cmake : ver. 3.18.4 Mac OS X : ver. 10.15.7 事件 我最近開了個 Side Project ，但他的 Cmake 組建系統在 Mac OS X 上一直無法成功組建，錯誤訊息都是在連結時ranlib報告說發現某個特定的 Object File 中沒有 Symbol 。
+一開始我便換了個平台 ( Linux 系統 ) 做組建，可以成功組建，因此我便往「 Cmake 與 Mac OS X 自帶的 Tool Chain 會有衝突」這個方向研究，事實上有找到不少資料都產生了與我類似的問題，但都沒有幫助。找到比較有關的是說在 Mac 上多執行緒的組建有蟲，沒辦法正確做 Linking ，但我試著將組建系統單執行緒化也仍然會有這個問題。</description></item><item><title>毒L紀 程設一[??] 期中考反省文</title><link>https://blog.jw910731.wtf/course/comp-prog-i-midterm/</link><pubDate>Sat, 07 Nov 2020 01:07:54 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-midterm/</guid><description>心得 這次的期中考我大翻車，整個就是因為沒有好好認真看待這次考試，考完這次之後我覺得程式設計根本就已經是低配版的軟體工程了 ( 我是說整體課堂要求，不是授課內容 )。不過我依舊覺得很有趣，比起其他學校那種「正常」我會想翹掉的程式設計課，我倒覺得這麼邪惡也很有趣！
 時辰心得 (時間以時間戳表示)
 00:30
 一開始我看了一下題目，覺得不太難，我為了正常發會，就不給自己那麼多壓力，慢慢寫
@@ -19,54 +16,21 @@ CC=gcc CFLAGS=-Wall -Wextra -std=c11 -O2 LDFLAGS=-lm TARGETS=mid01 mid02 mid03 m
 01:30
 第二題的進度不盡理想，所以先讀第四題的前半部分，發現第四題勞動太多，剩下的時間寫不出來
 01:50
-第二題瑣碎的問題差不多解決了，準備編譯，才發現Makefile在Linking Stage的參數傳遞狀況不好，無法做Linking
-快速修改Makefile時，不小心把Source Code刪掉了！
-02:00
-開始著手恢復第一題
-02:10
-完成第一題大部分的恢復
-02:15
-著手第三題恢復
-02:20
-第三題恢復完成
-02:25
-第一題有個我覺得要判掉的測資沒辦法被判掉，緊急Debug
-結束
-最後沒辦法回天乏術，不過賽後才發現那筆測資不用判掉，題目有保證那類測資不會被輸入
-改進 整體沒有達到該有的表現，而且測驗環境沒有好好測試，導致使用的Makefile沒有抓到有這個嚴重的問題(在Mac上是好的&amp;hellip;.) 總之，我認為不應該再犯這種錯了！下次程設期末考，我打算引進版本控制，並以隨身碟作為遠端分支，進行電腦崩潰時的備份，如果可以還希望可以引進 CI / CD 等想法的自動化套件，自動化編譯並節省所花費的時間！
-同時，我打算以期末破台為目標，好好調教我的環境XDDD，不要再只花1個小時趕工垃圾考試環境了wwwww</description></item><item><title>ICPC Singapore 2015 Regional 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</link><pubDate>Fri, 06 Nov 2020 01:22:44 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</guid><description>題目 NAME A Association for Cool Machineries (Part 1) B Association for Cool Machineries (Part 2) C Association for Control Over Minds D Association of Computer Maintenance E Association for Computing Machinery F Air Conditioned Minions G Association for the Country of Mububa H Association for Convex Main Office I Apples, Cherries, and Mangos J Association of Camera Makers K Association of Cats and Magical Lights 心得 這次首先感謝原齊神之思路，以及子權的 $ O(n) $ 算法 TLE ( $2\leq n\leq 100$ )</description></item><item><title>Archlinux 初體驗</title><link>https://blog.jw910731.wtf/blog/first-time-archlinux/</link><pubDate>Wed, 28 Oct 2020 07:17:30 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/first-time-archlinux/</guid><description>前言 好吧，總之我就是腦袋撞到突然起意，看到某程設老師的電腦好像是 arch 誒，就來裝 ArchLinux 順便挑戰自己的 Linux 程度吧，畢竟用了 Linux 那麼久，再繼續被某 Linux Distrobution 和 snap 綁架也就太難看了。
+第二題瑣碎的問題差不多解決了，準備編譯，才發現Makefile在Linking Stage的參數傳遞狀況不好，無法做Linking</description></item><item><title>ICPC Singapore 2015 Regional 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</link><pubDate>Fri, 06 Nov 2020 01:22:44 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-icpc-singapore-2015-sim/</guid><description>題目 NAME A Association for Cool Machineries (Part 1) B Association for Cool Machineries (Part 2) C Association for Control Over Minds D Association of Computer Maintenance E Association for Computing Machinery F Air Conditioned Minions G Association for the Country of Mububa H Association for Convex Main Office I Apples, Cherries, and Mangos J Association of Camera Makers K Association of Cats and Magical Lights 心得 這次首先感謝原齊神之思路，以及子權的 $ O(n) $ 算法 TLE ( $2\leq n\leq 100$ )</description></item><item><title>Archlinux 初體驗</title><link>https://blog.jw910731.wtf/blog/first-time-archlinux/</link><pubDate>Wed, 28 Oct 2020 07:17:30 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/first-time-archlinux/</guid><description>前言 好吧，總之我就是腦袋撞到突然起意，看到某程設老師的電腦好像是 arch 誒，就來裝 ArchLinux 順便挑戰自己的 Linux 程度吧，畢竟用了 Linux 那麼久，再繼續被某 Linux Distrobution 和 snap 綁架也就太難看了。
 本次安裝環境選擇安全一些的 VMWare Fusion 虛擬機，反正免費的不拿嗎？XD
-硬碟30GB RAM 1024MB 3D Acceleration RAM 給少是因為想裝 light 一點的的 Linux 在 Mac 上，僅是為了補足 CTF 和惡搞時需要 Linux 的需求
-過程 本次的安裝完全以此Arch Linux 官方文件進行
-第一個遇到的問題應該是用fdisk切分割區拉，以前在圖形安裝環境下有Gparted等圖形介面可以用，雖然依舊有用fdisk手切過的經驗，可是還是會怕把分割區切爛。結果意外的還算順利，唯一遇到的的問題是解析度有點糟糕，所以常常整頁的列表會被切掉，上面的部分看不到 QQ
-這次分割區配置是
-Partition Type(MountPoint) Size /dev/sda1 Linux(/) 28GB /dev/sda2 Linux Swap 2GB 接著就是安裝套件、設定/etc/fstab、設定時區、處理 initramfs 等繁瑣的小事了。 最後我還差點忘記安裝Bootloader，裝完還忘記做設定，真是蠢爆了， Tutorial 真的要好好看完啊！</description></item><item><title>NCPC 2020 心得文</title><link>https://blog.jw910731.wtf/blog/competitive-prog-ncpc-2020/</link><pubDate>Thu, 01 Oct 2020 22:59:55 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-ncpc-2020/</guid><description>題目 個人備份載點
-Title A Partial Fraction B The Magic Square C eBike Battery Drain D Mysterious Message E Navigation Problem F Number Combination Problem G National Challenging Proud Curiosity 心得 戰績：校內第7名，榜單上第25名，沒能晉級QQ
-一如往常，首先感謝隊友不嫌棄我不會寫程式，還願意把我留在隊裡(誤
-感覺這次我們寫扣的穩度不太OK，估複雜度也沒有估好，看題速度也ˊ_&amp;gt;ˋ
-題目心得:
-PA: 聽說是歐幾里德擴展模板題，但我們這隊沒人聽說過是什麼，放棄
-PB: 奇怪勞動題，沒仔細看
-PC: 帶修改(樹邊權)的樹直徑，但事實上修改次數夠少，每次都O(V)求樹直徑是可以的，但我把它想成heavy light decomposition跟LCA了，連精神都沒能AC
-PD: Burrows–Wheeler transform的裸題，但最後想法爛掉了
-PE: 勞動題，沒看</description></item><item><title>毒L紀 程設一[3] HW1心得 - MultiTarget Makefile</title><link>https://blog.jw910731.wtf/course/comp-prog-i-3/</link><pubDate>Thu, 01 Oct 2020 15:45:12 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-3/</guid><description>Multi-target Makefile 好吧，我總算要面對這個可怕的事情了。 如果今天一個Makefile要生成多個目標，我應該怎麼辦QwQ
+硬碟30GB RAM 1024MB 3D Acceleration RAM 給少是因為想裝 light 一點的的 Linux 在 Mac 上，僅是為了補足 CTF 和惡搞時需要 Linux 的需求</description></item><item><title>NCPC 2020 心得文</title><link>https://blog.jw910731.wtf/blog/competitive-prog-ncpc-2020/</link><pubDate>Thu, 01 Oct 2020 22:59:55 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-ncpc-2020/</guid><description>題目 個人備份載點
+Title A Partial Fraction B The Magic Square C eBike Battery Drain D Mysterious Message E Navigation Problem F Number Combination Problem G National Challenging Proud Curiosity 心得 戰績：校內第7名，榜單上第25名，沒能晉級QQ</description></item><item><title>毒L紀 程設一[3] HW1心得 - MultiTarget Makefile</title><link>https://blog.jw910731.wtf/course/comp-prog-i-3/</link><pubDate>Thu, 01 Oct 2020 15:45:12 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-3/</guid><description>Multi-target Makefile 好吧，我總算要面對這個可怕的事情了。 如果今天一個Makefile要生成多個目標，我應該怎麼辦QwQ
 後來我找了一些資料後調配了這個Makefile
-CC=gcc CFLAGS=-Wall -Wextra -std=c11 -O2 TARGETS=hw0101 hw0102 hw0103 hw0105 .PHONY: all all: $(TARGETS) .SECONDEXPANSION: $(TARGETS): %: $$*.o %.o: $@.c clean: rm -rf $(TARGETS) $(addsuffix .o,$(TARGETS)) 把TARGETS變數改成想編譯的執行檔檔名(們)，他就會去找同名的.c原始碼檔，把他編譯成對應的執行檔。
-其中用到了一個叫做&amp;quot;Second Expansion&amp;quot;的功能，似乎與Makefile中變數evaluate的時機點有關，不過有些複雜，打算之後讀完再來寫一篇OwO
-總之之前想得很簡單，以為可以優雅的把這個「小問題」處理掉，最後還是用了一堆沒讀熟的黑魔法。書單又增長了QwQ</description></item><item><title>毒L紀 程設一[2] 建構工具</title><link>https://blog.jw910731.wtf/course/comp-prog-i-2/</link><pubDate>Wed, 23 Sep 2020 20:58:19 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-2/</guid><description>Make Intro Make指令會在執行時的word dir底下尋找Makefile這個檔案， 依照裡面的指示編譯你的程式，所以正確編寫Makefile就變成了建立建構系統時的一件重要的事情。
+CC=gcc CFLAGS=-Wall -Wextra -std=c11 -O2 TARGETS=hw0101 hw0102 hw0103 hw0105 .PHONY: all all: $(TARGETS) .SECONDEXPANSION: $(TARGETS): %: $$*.o %.o: $@.c clean: rm -rf $(TARGETS) $(addsuffix .o,$(TARGETS)) 把TARGETS變數改成想編譯的執行檔檔名(們)，他就會去找同名的.</description></item><item><title>毒L紀 程設一[2] 建構工具</title><link>https://blog.jw910731.wtf/course/comp-prog-i-2/</link><pubDate>Wed, 23 Sep 2020 20:58:19 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-2/</guid><description>Make Intro Make指令會在執行時的word dir底下尋找Makefile這個檔案， 依照裡面的指示編譯你的程式，所以正確編寫Makefile就變成了建立建構系統時的一件重要的事情。
 一個最簡單的Makefile大概如下
 .PHONY: gcc -o main main.c 但我個人覺得之後檔案變多，還想加各種編譯參數加入後會變得很難調教，在下面給個我個人覺得很棒的Makefile範例。
 安利時間 make是Linux系統上常見的建構工具，有著強大的功能。這邊展示我個人調教的Makefile
 CC=gcc CFLAGS=-Wall -Wextra -O2 -std=c11 P=main OBJECTS=main.o $(P): $(OBJECTS) clean: rm $(OBJECTS) $(P) 其中要記得把OBJECTS變數設成自己原始檔(source)的名稱(請將副檔名改成.o)，若有多個檔案請以空格隔開，這樣在make執行時就會一併幫你組建好了。CFLAGS可以自己調成自己喜歡的編譯器參數，不管是享受-O3毒瘤的超爽加速還是想請編譯器別噴那麼多Warning都可以。
 這個Makefile很短，且有很高的適應性，在期中期末即使遇到雞掰的要求也能優雅的組建。其中的編譯指令已經以make系統的預設建構指令隱含在裡面了，LDFLAG也因不需要link其他的Library而省略了。
-詳細的Makefile設定方法可以看〈21世紀的C語言〉這本書，上面的Makefile也是在閱讀此書後寫的，書中講述了很多現代C語言在實戰中可以運用的技巧與如何優雅使用C語言，強烈推薦未來想繼續使用C語言的人入手！
-讚曰 文元讚曰，感謝C語言讓我們不用寫組合語言，在此分享Apollo-11登月導航的原始碼，以組合語言寫成。因為有C語言的誕生，我們才能免於如同登月時的電腦工程師一般受到組合語言的摧殘。</description></item><item><title>2020/09/18 師大碼賽客 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-2020-09-18/</link><pubDate>Fri, 18 Sep 2020 23:59:33 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-2020-09-18/</guid><description>題目 Origin Title A UVA 10530 Guessing Game B UVA 12428 Enemy at the Gates C UVALive 6693 Flow Game D UVALive 6692 Lucky Number E UVA 1589 Xiangqi F UVALive 7003 A Balance Game on Trees G UVA 11419 SAM I AM H UVA 11324 The Largest Clique I UVA 11825 Hackers&amp;rsquo; Crackdown J UVA 10462 Is There A Second Way Left?</description></item><item><title>毒L紀 程設一[1] Hello World與如何編譯</title><link>https://blog.jw910731.wtf/course/comp-prog-i-1/</link><pubDate>Fri, 18 Sep 2020 15:39:55 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-1/</guid><description>Programming 上課範例程式 #include &amp;lt;stdio.h&amp;gt; int main(){ printf(&amp;quot;Hello World!\n&amp;quot;); return 0; } main是C語言定義的Entry Point，程式執行後會呼叫main。
+詳細的Makefile設定方法可以看〈21世紀的C語言〉這本書，上面的Makefile也是在閱讀此書後寫的，書中講述了很多現代C語言在實戰中可以運用的技巧與如何優雅使用C語言，強烈推薦未來想繼續使用C語言的人入手！</description></item><item><title>2020/09/18 師大碼賽客 模擬賽心得</title><link>https://blog.jw910731.wtf/blog/competitive-prog-2020-09-18/</link><pubDate>Fri, 18 Sep 2020 23:59:33 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/competitive-prog-2020-09-18/</guid><description>題目 Origin Title A UVA 10530 Guessing Game B UVA 12428 Enemy at the Gates C UVALive 6693 Flow Game D UVALive 6692 Lucky Number E UVA 1589 Xiangqi F UVALive 7003 A Balance Game on Trees G UVA 11419 SAM I AM H UVA 11324 The Largest Clique I UVA 11825 Hackers&amp;rsquo; Crackdown J UVA 10462 Is There A Second Way Left?</description></item><item><title>毒L紀 程設一[1] Hello World與如何編譯</title><link>https://blog.jw910731.wtf/course/comp-prog-i-1/</link><pubDate>Fri, 18 Sep 2020 15:39:55 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-1/</guid><description>Programming 上課範例程式 #include &amp;lt;stdio.h&amp;gt;int main(){ printf(&amp;#34;Hello World!\n&amp;#34;); return 0; } main是C語言定義的Entry Point，程式執行後會呼叫main。
 printf是格式化輸出的函數，型別為int printf ( const char * format, ... )，也就是說輸入一個「格式化字串」(型別為內容為常數的字元陣列(也是指標))，以及多個格式化字串所需的參數，輸出格式化字串格式化後的結果到標準輸出流。格式化字串的格式以連結為例！
 return 0;事實上是main函數回傳給系統的Exit Code，可以代表程式結束的狀況是正常還是異常，以Linux而言0是正常退出。
-毒瘤程式 #include &amp;lt;unistd.h&amp;gt; int main(){ char s[]=&amp;quot;Hello World!\n&amp;quot;; write(STDOUT_FILENO, s, sizeof(s)); return 0; } 不要問，裸的輸出Fixed Length Byte到stdout的人是瘋子。
-編譯與執行 安利個編譯參數，如下：
-gcc -O2 -std=c11 -Wall -Wextra -o &amp;lt;輸出檔案&amp;gt; &amp;lt;原始碼&amp;gt; 解釋個參數
--O2 幫你優化程式，讓你奇怪的錯誤更容易被發現 -std=c11 告訴編譯器你要寫的程式要用C11的標準來編譯 -Wall -Wextra 叫編譯器多檢查些，但這樣就會出現程式可以編譯，卻會出現警告訊息的狀況，多出來的警告訊息就斟酌參考吧！ 請記得把&amp;lt;原始碼&amp;gt;替換成自己source file的名稱，&amp;lt;輸出檔案&amp;gt;換成你想要編譯完的程式想要的名字</description></item><item><title>毒L紀 程設一[0] 基本Linux開發環境設置</title><link>https://blog.jw910731.wtf/course/comp-prog-i-0/</link><pubDate>Wed, 16 Sep 2020 22:55:30 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-0/</guid><description>垃圾話 毒L紀 = 毒瘤+Linux紀
+毒瘤程式 #include &amp;lt;unistd.</description></item><item><title>毒L紀 程設一[0] 基本Linux開發環境設置</title><link>https://blog.jw910731.wtf/course/comp-prog-i-0/</link><pubDate>Wed, 16 Sep 2020 22:55:30 +0800</pubDate><guid>https://blog.jw910731.wtf/course/comp-prog-i-0/</guid><description>垃圾話 毒L紀 = 毒瘤+Linux紀
 意指我以毒瘤的稱號讚嘆這個老師足夠狂，敢搬這麼毒瘤的東西出來給大家吸
 總之這個系列不定期推出
 會放點你可能必須知道的東西，也會放些不建議你抄也不太健康的東西
@@ -77,24 +41,11 @@ gcc -O2 -std=c11 -Wall -Wextra -o &amp;lt;輸出檔案&amp;gt; &amp;lt;原始碼
 但總之建議不要用WSL 1惹L紀森77，而且那很毒瘤。
 安裝教學可以Google也可以看
 總之這傢伙可以給你一個Linux的Command Prompt(命令列)，而且你不需要手動分配固定大小的記憶體給他，他會自己想辦法，網路也互通，檔案可以從/mnt底下看到你的C槽D槽，但不太建議你把平常Linux的檔案放在Windows的檔案目錄下，不然存取檔案的效能可能會GG
-Repl.it 這個網站提供Online Editor與Linux Container(可以想成一個人一個隔離的指令列環境)，可以提供輕量化的Linux開發環境，如果只想寫作業不想搞Linux我個人非常推薦。學生可以去註冊Github Student Pack，可以有一年免費Premium的功能！(這不是業配，相信我&amp;gt;.&amp;lt;)
-使用Mac OS X (咦 L紀說其實Mac OS是可以使用的沒問題，畢竟不是邪教Windows馬
-所以有Mac就歡樂的使用吧OwO，記得使用xcode-select --install來安裝編譯工具鍊喔(內含clang與make)，但要注意編譯器與老師使用的gcc不一樣喔OwO，不過大致上除了指令以外沒什麼不相容的。(在mac裡面打gcc其實是clang喔XD)
-設置編寫環境 原生/虛擬機環境/Mac OS X 強推Sublime Text 3給你舒服編譯環境
-即使是Mac的使用者也可以一起來喔
-這裡送上推薦必備的Plugin
-Chineese Localization SublimeLinter SublimeLinter-gcc 其中SublimeLinter-gcc在安裝時會提供預設的設定檔，可以跟著附贈的教學操作，使用預設設定檔，就可以有即時的語法檢查了 目前一鍵舒服編譯的工具目前只支援C++，就不放上來了，等我慢慢更新吧QwQ WSL 2 可以使用Visual Studio Code(不是Visual Studio ! ! )的Remote - WSL來在WSL內的環境開發 有興趣的人可以研究看看，我沒在用這個寫C</description></item><item><title>Hime輸入法導致特定程式無法開啟</title><link>https://blog.jw910731.wtf/blog/hime-cause-gtk-crash/</link><pubDate>Fri, 11 Sep 2020 00:13:47 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/hime-cause-gtk-crash/</guid><description>Info Linux env Linux Mint 20.04 + Linux Kernel 5.4.0-47-generic Cinnamon Desktop Environment Hime IME (ver. 0.9.10) Sublime Text 3 (Build 3211) 事件 某天我想寫程式的時候發現打不開Sublime Text 3了，但從command line打開卻沒跑出任何錯誤訊息。經過一波爬文後找到要用--debug來拿到錯誤訊息，接著就拿到
-GLib-GObject-WARNING **: 19:44:00.522: cannot register existing type 'GtkIMContext' GLib-CRITICAL **: 19:44:00.522: g_once_init_leave: assertion 'result != 0' failed GLib-GObject-CRITICAL **: 19:44:00.522: g_type_register_dynamic: assertion 'parent_type &amp;gt; 0' failed GLib-GObject-CRITICAL **: 19:44:00.522: g_object_new_with_properties: assertion 'G_TYPE_IS_OBJECT (object_type)' failed 類似這樣的訊息(上面截自這裡)
-我沒太多想法，能看到的關鍵字只有GtkIMContext，只好往IME的方向研究。後來得到HIME的Issue #584，便自己編譯了一下HIME 安裝了自己編譯的HIME就奇蹟般的沒事了OwO，果然還是要&amp;quot;Homebrew&amp;quot;阿(?</description></item><item><title>Linux 邏輯磁區在重開後變為 inactivate</title><link>https://blog.jw910731.wtf/blog/lvm-inactive-boot/</link><pubDate>Wed, 26 Aug 2020 15:38:57 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/lvm-inactive-boot/</guid><description>Info 硬體 CPU: AMD Ryzen 3800X
+Repl.it 這個網站提供Online Editor與Linux Container(可以想成一個人一個隔離的指令列環境)，可以提供輕量化的Linux開發環境，如果只想寫作業不想搞Linux我個人非常推薦。學生可以去註冊Github Student Pack，可以有一年免費Premium的功能！(這不是業配，相信我&amp;gt;.</description></item><item><title>Hime輸入法導致特定程式無法開啟</title><link>https://blog.jw910731.wtf/blog/hime-cause-gtk-crash/</link><pubDate>Fri, 11 Sep 2020 00:13:47 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/hime-cause-gtk-crash/</guid><description>Info Linux env Linux Mint 20.04 + Linux Kernel 5.4.0-47-generic Cinnamon Desktop Environment Hime IME (ver. 0.9.10) Sublime Text 3 (Build 3211) 事件 某天我想寫程式的時候發現打不開Sublime Text 3了，但從command line打開卻沒跑出任何錯誤訊息。經過一波爬文後找到要用--debug來拿到錯誤訊息，接著就拿到
+GLib-GObject-WARNING **: 19:44:00.</description></item><item><title>Linux 邏輯磁區在重開後變為 inactivate</title><link>https://blog.jw910731.wtf/blog/lvm-inactive-boot/</link><pubDate>Wed, 26 Aug 2020 15:38:57 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/lvm-inactive-boot/</guid><description>Info 硬體 CPU: AMD Ryzen 3800X
 GPU: AMD RX570
 RAM: 16GB
-磁區分配 PV 硬碟 SSD(nvme0n1p5) HHD(sda2) PV size 250GB 250GB VG SSD+HHD: sys
-LV sys/root(根目錄) : SSD 186GB
-sys/home(家目錄) : SSD 64GB(Lvm Cache) + HHD 250GB
-非LVM nvme0n1p1 ( 500MB ): EFI nvme0n1p4 ( 1GB ): /boot 軟體 OS: Linux Mint 20
-其餘軟體預載
-事件 系統正確設置安裝後，開機時會卡在mounting /dev/sys/home，timeout後無法正確啟動
-研究 插入開機碟後發現sys/home不可見，隨後經過googling與探索後發現是不知為何LV inactivated了</description></item><item><title>AWS帳號啟用心得文</title><link>https://blog.jw910731.wtf/blog/aws-fail-verify/</link><pubDate>Mon, 17 Aug 2020 00:06:09 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/aws-fail-verify/</guid><description>緣由 之前雖然有一個AWS帳號，但因為不知道要拿來玩什麼就沒有動他了。直到最近有幸搶到shrt.tw網域，我想來搞個serverless url shortener，就把AWS帳號翻出來用了。
+磁區分配 PV 硬碟 SSD(nvme0n1p5) HHD(sda2) PV size 250GB 250GB VG SSD+HHD: sys</description></item><item><title>AWS帳號啟用心得文</title><link>https://blog.jw910731.wtf/blog/aws-fail-verify/</link><pubDate>Mon, 17 Aug 2020 00:06:09 +0800</pubDate><guid>https://blog.jw910731.wtf/blog/aws-fail-verify/</guid><description>緣由 之前雖然有一個AWS帳號，但因為不知道要拿來玩什麼就沒有動他了。直到最近有幸搶到shrt.tw網域，我想來搞個serverless url shortener，就把AWS帳號翻出來用了。
 結果啟用香港地區的時候居然被帳號啟用卡住，而且電話驗證一直出現要我找客服求救，我等了一天再試也還是不行，就向客服求救了。
 悲劇 本來想說透過步調緩慢的信件來往比較舒服，結果直接回了一封機器人要我Chat，我一整個嚇怕，以為是語音通訊，還好只是線上聊天室而已！
 Chat裡面的客服要我給他手機號碼要幫我做「人工認證」，我給了+886 09XXXXXXXX的電話給他，但&amp;hellip;.我忘記外國手機號碼前面沒有0了，反覆試了好幾個電話都不成功，他要我確認我有沒有拒接外國來電，並跟我說再幫試最後一次，但還是爛掉了，他就不理我了QQ
