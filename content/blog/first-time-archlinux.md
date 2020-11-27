@@ -1,7 +1,7 @@
 ---
 title: "Archlinux 初體驗"
 date: 2020-10-28T07:17:30+08:00
-description: ""
+description: "第一次挑戰安裝Archlinux與使用心得"
 keywords: []
 draft: false
 tags: ["Linux", "ArchLinux", "心得"]

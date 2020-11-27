@@ -1,7 +1,7 @@
 ---
 title: "ICPC Singapore 2015 Regional 模擬賽心得"
 date: 2020-11-06T01:22:44+08:00
-description: ""
+description: " "
 keywords: []
 draft: false
 tags: ["師大", "Star Coder 碼賽客", "心得", "Competitive Programming 競程"]

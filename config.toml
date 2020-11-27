@@ -1,64 +1,51 @@
 # DO NOT REMOVE THIS
-theme = "hugo-theme-codex" 
-
-# Override these settings with your own
-title = "jw910731's Blog"
-languageCode = "en-us"
+theme = "hyde-hyde"
 baseURL = "https://blog.jw910731.wtf/"
-copyright = "jw910731© {year}"
+languageCode = "en"
+title = "jw910731's Blog"
 
-# Add your Disqus shortname here.
-# disqusShortname = ""
+# disqusShortname = "your-disqus-shortname"
+googleAnalytics = "UA-178403196-1"
 
-# Add your Google Analytics identifier: UA-XXXXXXXX-X
-googleAnalytics = "UA-178403196-1" 
+summarylength = 30
 
-# Optional params
 [params]
-    # Follow the Hugo date/time format reference here: 
-    # https://gohugo.io/functions/format/#gos-layout-string
-    #dateFormat = "Jan 2 2006"
+    author = "jw910731"
+    title = "jw910731's Blog"
+    # description = "..."
+    # authorimage = "/img/hugo.png"
+    dateformat = "2006/1/1"
 
-    # Links to your social accounts, comment/uncomment as needed. Icons will be displayed for those specified.
-    #twitter = "https://twitter.com/<your handle>"
-    github = "https://github.com/jw910731"
-    email = "mailto:jw910731@gmail.com"
-    # facebook = "https://facebook.com/<your handle>"
-    gitlab = "https://gitlab.com/jw910731"
-    # instagram = "https://instagram.com/<your handle>"
-    # linkedin = "<link to your profile>"
-    # youtube = "https://www.youtube.com/channel/<your channel>"
-    
-    # Titles for your icons (shown as tooltips), and also their display order.
-    # Currently, these icons are supported: 
-    #   "Twitter", "GitHub", "Email", "Facebook", "GitLab", "Instagram", "LinkedIn", "YouTube"
-    iconOrder = ["GitHub", "Gitlab", "Email"]
+    # sidebar, copyright & license
+    #logoimage = "/img/hugo.png"
+    copyright = "jw910731"
+    since = 2020
+    #license = "CC BY-SA 4.0"
+    #licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+    showBuiltWith = true
 
-    # Metadata for Twitter cards, defaults to params.twitter
-    # twitterSite = "@<your handle>"
-    # twitterAuthor = "@<your handle>"
+    # https://highlightjs.org
+    highlightjs = true
 
-    # Set to true to display page title in table of contents in blog posts.
-    showPageTitleInTOC = true
+	# please choose either GraphComment or Disqus or Utterances
+    #GraphCommentId = "..."
+    #UtterancesRepo = "..." # https://utteranc.es/
+    #UtterancesIssueTerm = "..." # pathname, url, title, og:title
+    #UtterancesTheme = "..." # github-light or github-dark
 
-# This disables Hugo's default syntax highlighting in favor
-# of prismjs. If you wish to use Hugo's default syntax highlighting
-# over prismjs, remove this. You will also need to remove the prismjs
-# vendor script in layouts/blog/single.html.
-[markup]
-    [markup.highlight]
-        codeFences = false
-      
-    # Set to false to disallow raw HTML in markdown files
-    [markup.goldmark.renderer]
-        unsafe = true
+    # Table of contents
+    # none, "hugo", or "tocbot"
+    #toc = "none"
+    math=true
+    mainSections=["blog", "course"]
 
-# Controls the navigation
-[[menu.main]]
-    identifier = "about"
-    name = "about"
-    title = "About"
-    url = "/"
+[params.social]
+	github = "jw910731"
+	bitbucket="jw910731"
+	gitlab="jw910731"
+	facebook="jw910731"
+	email="jw910731@gmail.com"
+	stackoverflow="11264533/jw910731"
 
 [[menu.main]]
     identifier = "blog"

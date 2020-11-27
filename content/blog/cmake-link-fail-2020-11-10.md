@@ -1,7 +1,7 @@
 ---
 title: "Cmake Link Failed on Mac OS X"
 date: 2020-11-10T00:44:37+08:00
-description: "Cmake在"
+description: "Cmake因為原始碼編寫錯誤導致的編譯錯誤，被誤以為是系統套件的不相容所致"
 keywords: []
 draft: false
 tags: ["事件", "cpp", "cmake"]
