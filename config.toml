@@ -12,12 +12,12 @@ summarylength = 30
 [params]
     author = "jw910731"
     title = "jw910731's Blog"
-    # description = "..."
+    description = "一個 CSIE 學生胡搞瞎搞的地方"
     # authorimage = "/img/hugo.png"
     dateformat = "2006/1/1"
 
     # sidebar, copyright & license
-    #logoimage = "/img/hugo.png"
+    # logoimage = "/img/hugo.png"
     copyright = "jw910731"
     since = 2020
     #license = "CC BY-SA 4.0"
@@ -28,7 +28,7 @@ summarylength = 30
     highlightjs = true
 
 	# please choose either GraphComment or Disqus or Utterances
-    #GraphCommentId = "..."
+    GraphCommentId = "Jw910731-blog"
     #UtterancesRepo = "..." # https://utteranc.es/
     #UtterancesIssueTerm = "..." # pathname, url, title, og:title
     #UtterancesTheme = "..." # github-light or github-dark
@@ -46,6 +46,7 @@ summarylength = 30
 	facebook="jw910731"
 	email="jw910731@gmail.com"
 	stackoverflow="11264533/jw910731"
+	gravatar = "jw910731@gmail.com"
 
 [[menu.main]]
     identifier = "blog"
