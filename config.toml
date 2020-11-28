@@ -37,7 +37,7 @@ summarylength = 30
     # none, "hugo", or "tocbot"
     #toc = "none"
     math=true
-    mainSections=["blog", "course"]
+    mainSections=["blog", "course", "post"]
 
 [params.social]
 	github = "jw910731"
