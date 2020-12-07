@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 lastmod: {{ .Date }}
-description: "Multi-target Makefile"
+description: ""
 tags : []
 layout: post
 type:  "post"
