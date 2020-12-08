@@ -33,7 +33,7 @@ draft: false
 
 我趁著這股幹勁，試著印出 Terminal 回報回來的滑鼠行為，卻遇到問題了，linux 的 stdin 是 line buffered 的，我本來試著停止 C 語言的 IO Buffer 但並未造成期待的結果。在使用 `gdb` 做中斷後，才發現 `read` 這個 system call 在遇到 newline 字元時才會將控制權交回主程式，這代表我必須跟系統好好談談才行。
 
-我找了快要1小時的資料才找到 `terminos.h` 這個函數庫，可以將指定的 tty / stty 轉換成 serial input ，並可以關閉 `read `以 newline 字元為 flush 輸入流時機點的功能。我便開始啃 `termios.h` 的 manpage ，但啃了半個小時快放棄時，才想到之前乾啃官方文件的失敗經驗，立刻 Google 找別人的精華文，並順便偷 example code 做實驗，這個方法讓我在 1 小時後得到了豐厚的成果，我已經可以順利捕捉到滑鼠行為，並著手撰寫相對應的抽象層，方便我後續程式的撰寫！
+我找了快要1小時的資料才找到 `termios.h` 這個函數庫，可以將指定的 tty / stty 轉換成 serial input ，並可以關閉 `read `以 newline 字元為 flush 輸入流時機點的功能。我便開始啃 `termios.h` 的 manpage ，但啃了半個小時快放棄時，才想到之前乾啃官方文件的失敗經驗，立刻 Google 找別人的精華文，並順便偷 example code 做實驗，這個方法讓我在 1 小時後得到了豐厚的成果，我已經可以順利捕捉到滑鼠行為，並著手撰寫相對應的抽象層，方便我後續程式的撰寫！
 
 ## 實作大冒險 >w<
 
