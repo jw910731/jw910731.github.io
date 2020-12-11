@@ -24,13 +24,13 @@ draft: false
 
 幫你抓記憶體洩漏，功能我覺得跟 Valgrind 不相上下，而且可以即時抓到記憶體洩漏，更加方便 ！
 
-缺點是要 Link 函數庫進來！
+缺點是要 link `-lusan` 函數庫！
 
 ## `-fsanitize=address`
 
 這個可以幫你抓到不合法的記憶體存取 ( 也包含陣列存取超界 ) ，不過更為強大！
 
-缺點也是要 Link 函數庫近來
+缺點也一樣，需要 link `-lasan` 函數庫！
 
 ## 參考 Makefile
 
