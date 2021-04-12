@@ -15,6 +15,7 @@ draft: false
 2. 社群活躍
 3. 套件管理好用
 4. 系統最小化
+
 這些優點真的讓我覺得 ArchLinux 與其他 Linux Distribution 很不一樣！
 
 # 套件與社群風氣自由
